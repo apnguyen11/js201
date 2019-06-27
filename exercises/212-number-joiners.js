@@ -6,6 +6,23 @@
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
 
+function numberJoinerWhile(num1, num2){
+    var blank = '';
+
+    while(num1 <= num2){
+       
+       
+       blank += num1 + "_";
+       num1++;
+       
+       
+
+
+       
+    }
+    console.log(blank);
+}
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
