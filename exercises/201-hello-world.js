@@ -1,6 +1,7 @@
 // Write a function "hello" that takes one argument (a name), and returns a
 // string that says hello to the name.
 // Example: hello('Mustache') should return 'Hello, Mustache!'
+
 function hello (name){
     var x = "Hello, " + name + "!";
     return x;
@@ -8,6 +9,8 @@ function hello (name){
 }
 
 console.log(hello("Mustache"));
+
+
 
 
 
