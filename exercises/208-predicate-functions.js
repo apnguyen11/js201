@@ -48,17 +48,19 @@ function isVowel(string){
 // isOdd(3.14) --> false
 
 function isEven(num){
-    if(num%2 == 0){
+    
+   if (Number.isInteger(num) && num%2 === 0){
+    
         return true; 
-    } else{
+    } else  {
         return false;
-    }
+    
+    } 
 }
-
 
 function isOdd(num){
     
-    if(num%2=== 1 || num%2=== -1){
+    if(Number.isInteger(num) && num%2=== 1 || num%2=== -1){
         return true;
     } else{
         return false;

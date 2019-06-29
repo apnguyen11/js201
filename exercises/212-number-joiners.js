@@ -6,30 +6,44 @@
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
 
+
+
 function numberJoinerWhile(num1, num2){
     var blank = '';
 
     while(num1 <= num2){
        
-       
-       blank += num1 + "_";
-       num1++;
-       
-       
+      blank += num1;
+      if(num1 !== num2){
+        blank += "_"; 
+      }
+      num1++;
 
-
-       
     }
-    console.log(blank);
+    
+    return blank;
 }
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
-
-
-
+function numberJoinerFor(num1, num2){
+    var blank = '';
+for(var i = num1; i <= num2; i++){
+  
+    blank += num1;
+    
+    if(num1 !== num2){
+      blank += "_"; 
+      num1++;
+    }
+    
+    
+ 
+    }
+    return(blank);
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",
 // except it takes an optional third argument specifying the separator between the numbers.
@@ -38,3 +52,24 @@ function numberJoinerWhile(num1, num2){
 // numberJoinerFancy(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerFancy(1, 5, '~') --> 1~2~3~4~5
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
+
+function numberJoinerFancy(num1, num2, pref){
+    var blank = '';
+for(var i = num1; i <= num2; i++){
+  
+    blank += num1;
+    
+    if(num1 !== num2 && typeof pref == 'string'){
+      blank += pref; 
+      num1++;
+    } else if(num1 !== num2){
+      blank += '_';
+      num1++;
+    } else {
+
+    }
+
+    
+    }
+    return(blank);
+}
