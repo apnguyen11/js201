@@ -8,3 +8,21 @@
 // 'Cheeeeese'
 // > longLongVowels('Man')
 // 'Man'
+
+function longLongVowels(word){
+  var newArray = word.split(""); 
+   for(var i = 0; i < newArray.length; i++){
+       if(newArray[i] == "a" || newArray[i] == "e" || newArray[i] == "i" || newArray[i] == "o" || newArray[i] == "u"){
+         if(newArray[i] == newArray[i + 1]){      
+           newArray.splice(newArray.indexOf(newArray[i]), 0, newArray[i], newArray[i], newArray[i])
+           return newArray.join("");
+         } else {
+           return word; 
+       } 
+      }
+   } if(word == undefined || word == ''){
+     return ''
+   } else {
+     return word
+   }
+  }
