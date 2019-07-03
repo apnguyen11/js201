@@ -8,8 +8,29 @@
 // *****
 // *****
 
-function makeSquare() {
-    
+function makeSquare(num) {
+    var star = "*";
+    var empty = '';
+    var myStr = '';
+    for(var i = 0; i < num; i++){
+        empty += star; 
+    }
+   for(var x = 0; x < num; x++){
+     myStr += empty + '\n'
+   }
+
+  var splitArray = myStr.split('');
+  splitArray.pop();
+  myStr = splitArray.join('');
+  
+
+   if(num === '' || num === 0){
+       return '';
+   } else if(num ===1){
+       return '*'
+   } else {
+       return myStr;
+   }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,9 +43,57 @@ function makeSquare() {
 // *    *
 // ******
 
-function makeBox() {
+function makeBox(width, height) {
+    var minus = width - 1
+    var star = "*";
+    var empty = '';
+    var empty2= empty.split('');
+    var blank = []
+    var myStr = '';
+    var height2 = height - 3
+    
+   for(var x = 0; x < width; x++){
+    myStr += star;
+   }
+ 
+  
+  var splitArray = myStr.split('');
+  var spliced = splitArray.splice(1, 2);
+  for(var j = 2; j < width;  j++){
+    spliced.splice(1, 0, " ")
+    
+  }
+  var joinedSpace = spliced.join('');
 
+  var finalEmpty = '';
+  for(var z = 0; z <= width; z++){
+    if( z == 0 || z == width){
+      finalEmpty += myStr + '\n';
+    } else if (height == 1){
+      return myStr
+    }  else if(height == 1 && width == 1){
+      return '*'
+    }
+    if(height > 2 && z <= height2){
+      finalEmpty += joinedSpace + '\n';
+      } else if(height == 1 && width == 1){
+      return '*'
+    } 
+  }
+    
+  var splitArray = finalEmpty.split('');
+  splitArray.pop();
+  finalEmpty = splitArray.join('');
+ 
+   if(width === '' || width === 0){
+       return '';
+   }  else{
+       return finalEmpty
+   }
+  
 }
+
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
