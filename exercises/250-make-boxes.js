@@ -106,6 +106,16 @@ function makeBox(width, height) {
 // * Welcome to DigitalCrafts *
 // ****************************
 
-function makeBanner() {
-
-}
+function makeBanner (str){
+    var empty = '';
+    var text = '* ' + str + ' *';
+    var star = '*';
+  
+    for(var i = 0; i < text.length; i++){
+      empty += star;
+    }
+  
+    var wholeText = empty + '\n' + text + '\n' + empty
+    console.log(wholeText)
+  }
+  
