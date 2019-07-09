@@ -116,6 +116,6 @@ function makeBanner (str){
     }
   
     var wholeText = empty + '\n' + text + '\n' + empty
-    console.log(wholeText)
+    return (wholeText)
   }
   
