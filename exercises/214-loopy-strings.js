@@ -95,3 +95,31 @@ function capitalizeAll(sentence){
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 
+//ways:
+// looping through and using charAt
+// regular expressions to find and replace
+// while loop with index of delimiter on the string
+
+
+
+function split(string, delimiter){
+  var results = [''];
+  var delimiterlength = delimiter.length
+  var index = 0
+  while(index < string.length){
+    var window = string.substr(index, delimiterlength)
+    console.log(window, index) 
+    
+    if(window == delimiter){ 
+      
+      results.push('')
+      index +=  delimiterlength;
+      continue
+    }
+    results[results.length-1] += window[0]
+    index++
+    
+  }
+  return results
+  
+}

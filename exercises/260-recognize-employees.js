@@ -16,21 +16,59 @@
 //
 // Hint: What is the best data structure for the employees of the month list?
 
-function recognizeEmployees (recognizedEmployee, employeeOfMonth){
-    var blank = []
-    for(var i = 0; i < recognizedEmployee.length; i++){
-      for(var x = 0; x < employeeOfMonth.length; x++){
-        if(recognizedEmployee[i] == employeeOfMonth[x]){
-            
-            blank.push('Outstanding job, ' + employeeOfMonth[x] + '!');
-            ;
-        } 
-        if (recognizedEmployee[i] !== employeeOfMonth[x]){
-            blank.push('Great job, ' + recognizedEmployee[i] + '!');
-            
-        }
+
+
+function recognizeEmployees (recognizedEmployees, employeesOfMonth){
+
+  //first get all emplyee names
+  var allEmployees = [];
+  for(var i = 0; i < recognizedEmployees.length; i++){
+    allEmployees.push(recognizedEmployees[i])
+  };
+  
+  for(var x = 0; x < employeesOfMonth.length; x++){
+    if(existsIn(employeesOfMonth[x], allEmployees)){
+      continue;
+    } else {
+      allEmployees.push(employeesOfMonth[x]);
+    }
+  }
+
+  // for each employee name recognize them
+  var finalEmployees = [];
+  for(var i = 0; i < recognizedEmployees.length; i++){
+    var sentence = recognizeEmployee(recognizedEmployees[i], recognizedEmployees, employeesOfMonth); 
+    if(sentence == null){
+      continue;
+    }
+    finalEmployees.push(sentence);
+
+  } 
+
+  return finalEmployees;
+  
+
+
+}
+
+function recognizeEmployee(name, recognizedEmployees, employeesOfMonth){
+  // return Outstanding job! or return Great job!
+  if(existsIn(name, employeesOfMonth)){
+    return "Outstanding job, " + name + "!";
+  } else if (existsIn(name, recognizedEmployees)){
+    return "Great job, " + name + "!";
+  } else {
+    return null;
+  }
+
+}
+
+function existsIn(thing, list){
+  for(var i = 0; i < list.length; i++){
+    if(thing == list[i]){
+      return true;
     } 
   }
-  return(blank);
-   
+  return false;
 }
+

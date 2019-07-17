@@ -21,3 +21,11 @@
 //
 // In this example we assume there is a function "hello" already defined and
 // that it prints "Hello, world!" to the console.
+
+function callNTimes (times, hello){
+
+    function hello(){
+        return "Hello, world!"
+    }
+
+}

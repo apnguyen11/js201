@@ -7,7 +7,9 @@
 // Examples:
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
-
+function alphaSort(letters){
+    return letters.sort();   
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,6 +19,12 @@
 // Examples:
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
+function strLengthSort(word){
+    word.sort(function(a, b){
+      return a.length - b.length
+    })
+    return word
+}
 
 
 
@@ -38,3 +46,35 @@
 //   [4, 5]
 // ])
 // > [[2], [4, 5], [9, 1, 9]]
+
+function sumSort(arr){
+  var blank = [];
+  var blank2 = [];
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  for(var i = 0; i < arr.length; i++){
+  blank.push(arr[i].reduce(reducer))
+  }
+
+ blank.sort((a, b) => a - b);
+ for(var j = 0; j < arr.length; j++){
+   if(arr[j].reduce(reducer) === blank[0]){
+     blank2.push(arr[j]);
+   }
+ }
+ for(var j = 0; j < arr.length; j++){
+   if(arr[j].reduce(reducer) === blank[1]){
+     blank2.push(arr[j]);
+   }
+ }
+ for(var j = 0; j < arr.length; j++){
+   if(arr[j].reduce(reducer) === blank[2]){
+     blank2.push(arr[j]);
+   }
+ }
+   
+ 
+ return blank2;
+ 
+ 
+}
